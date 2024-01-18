@@ -19,18 +19,18 @@ public class BookClientTests
     public BookClientTests()
     {
         // Using NSubstitute with HttpMessageHandler
-        //var httpClient = new HttpClient(_nSubHandler)
-        //{
-        //    BaseAddress = new Uri(_baseAddress)
-        //};
-        //_bookClient = new BookClient(httpClient);
-
-        // Using RichardSzalay.MockHttp
-        var httpClient = new HttpClient(_mockHandler)
+        var httpClient = new HttpClient(_nSubHandler)
         {
             BaseAddress = new Uri(_baseAddress)
         };
         _bookClient = new BookClient(httpClient);
+
+        // Using RichardSzalay.MockHttp
+        //var httpClient = new HttpClient(_mockHandler)
+        //{
+        //    BaseAddress = new Uri(_baseAddress)
+        //};
+        //_bookClient = new BookClient(httpClient);
     }
 
     [Fact]
